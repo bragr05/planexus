@@ -1,11 +1,14 @@
 {
-  "name": "planexus",
-  "version": "1.0.0",
-  "description": "API Planexus",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Brian Granados",
-  "license": "ISC"
+    "name": "planexus",
+    "version": "1.0.0",
+    "description": "API Planexus",
+    "main": "index.js",
+    "scripts": {
+        "start": "node ./src/app.js"
+    },
+    "author": "Brian Granados",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^5.1.0"
+    }
 }
