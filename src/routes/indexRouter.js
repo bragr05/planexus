@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { verifyToken } from "../middlewares/auth/verifyToken.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const router = express.Router();
@@ -35,6 +36,10 @@ router.post("/login", (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
+});
+
+router.get("/protected", verifyToken, (req, res) => {
+    res.status(200).json({ message: "This is a private endpoint" });
 });
 
 export default router;
